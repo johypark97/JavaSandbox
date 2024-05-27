@@ -4,6 +4,7 @@
 [versions]
 findsecbugs-plugin = "1.13.0"
 guava = "33.2.0-jre"
+javafx-plugin = "0.1.0"
 junit-jupiter = "5.10.2"
 logback-classic = "1.5.6"
 mockito-junit-jupiter = "5.12.0"
@@ -13,6 +14,7 @@ spotbugs-gradle-plugin = "6.0.15"
 [libraries]
 findsecbugs-plugin = { module = "com.h3xstream.findsecbugs:findsecbugs-plugin", version.ref = "findsecbugs-plugin" }
 guava = { module = "com.google.guava:guava", version.ref = "guava" }
+javafx-plugin = { module = "org.openjfx:javafx-plugin", version.ref = "javafx-plugin" }
 junit-jupiter = { module = "org.junit.jupiter:junit-jupiter", version.ref = "junit-jupiter" }
 junit-platform-launcher = { module = "org.junit.platform:junit-platform-launcher" }
 logback-classic = { module = "ch.qos.logback:logback-classic", version.ref = "logback-classic" }

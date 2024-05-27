@@ -6,6 +6,9 @@ val libs = the<LibrariesForLibs>()
 plugins {
     java
 
+    // JavaFX
+    id("org.openjfx.javafxplugin")
+
     // Static analysis tools
     pmd
     id("com.github.spotbugs")
@@ -39,6 +42,10 @@ java {
     toolchain {
         languageVersion = JavaLanguageVersion.of(17)
     }
+}
+
+javafx {
+    version = "22"
 }
 
 pmd {
