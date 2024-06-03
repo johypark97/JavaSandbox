@@ -45,7 +45,7 @@ java {
 }
 
 javafx {
-    version = "22"
+    version = "21.0.3"
 }
 
 pmd {
