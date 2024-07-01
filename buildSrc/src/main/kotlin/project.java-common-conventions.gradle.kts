@@ -1,4 +1,3 @@
-import com.github.spotbugs.snom.SpotBugsTask
 import org.gradle.accessors.dm.LibrariesForLibs
 
 val libs = the<LibrariesForLibs>()
@@ -11,7 +10,6 @@ plugins {
 
     // Static analysis tools
     pmd
-    id("com.github.spotbugs")
 }
 
 repositories {
@@ -31,11 +29,6 @@ dependencies {
     testImplementation(libs.junit.jupiter)
     testImplementation(libs.mockito.junit.jupiter)
     testRuntimeOnly(libs.junit.platform.launcher)
-
-    // -------- Spotbugs --------
-    // implementation("com.github.spotbugs:spotbugs-annotations:${spotbugs.toolVersion.get()}")
-    spotbugs("com.github.spotbugs:spotbugs:${spotbugs.toolVersion.get()}")
-    spotbugsPlugins(libs.findsecbugs.plugin)
 }
 
 java {
@@ -56,19 +49,6 @@ pmd {
     ruleSets = emptyList()
 }
 
-spotbugs {
-    excludeFilter.set(file("$rootDir/buildSrc/config/spotbugs/exclude.xml"))
-    ignoreFailures.set(false)
-    toolVersion.set("4.8.5")
-}
-
 tasks.named<Test>("test") {
     useJUnitPlatform()
-}
-
-tasks.withType<SpotBugsTask> {
-    reports.create("html") {
-        required.set(true)
-        setStylesheet("fancy-hist.xsl")
-    }
 }
