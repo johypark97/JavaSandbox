@@ -1,21 +1,19 @@
 import java.time.ZonedDateTime
 import java.time.temporal.ChronoUnit
 
-val appName = "JavaSandbox"
-val buildBasename = "jsandbox"
 val buildVersion = Version.makeVersionString()
 
 plugins {
-    id("project.java-application-conventions")
+    id("buildlogic.java-application-conventions")
 }
 
 dependencies {}
 
 application {
-    mainClass.set("javasandbox.Main")
-    mainModule.set("javasandbox")
+    mainClass = "javasandbox.App"
+    mainModule = "javasandbox"
 
-    applicationName = appName
+    applicationName = "JavaSandbox"
     executableDir = ""
 
     // Include '$projectDir/data' directory in archive files of the distribution task.
@@ -38,7 +36,7 @@ tasks.register<WriteProperties>("processResources_buildProperties") {
 }
 
 tasks.processResources {
-    dependsOn(tasks.named("processResources_buildProperties"))
+    dependsOn("processResources_buildProperties")
 }
 
 tasks.jar {
@@ -47,6 +45,6 @@ tasks.jar {
         attributes["Main-Class"] = application.mainClass.get()
     }
 
-    archiveBaseName.set(buildBasename)
-    archiveVersion.set(buildVersion)
+    archiveBaseName = "jsandbox"
+    archiveVersion = buildVersion
 }

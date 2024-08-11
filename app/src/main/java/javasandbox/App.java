@@ -5,13 +5,13 @@ package javasandbox;
 
 import java.nio.charset.Charset;
 
-public class Main {
+public class App {
     public String getGreeting() {
         return "Hello World!";
     }
 
     public static void main(String[] args) {
-        System.out.println(new Main().getGreeting());
+        System.out.println(new App().getGreeting());
 
         // String fileEncoding = System.getProperty("file.encoding");
         String fileEncoding = Charset.defaultCharset().displayName();
