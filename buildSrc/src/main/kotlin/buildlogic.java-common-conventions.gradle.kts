@@ -20,10 +20,11 @@ dependencies {
     implementation(libs.guava)
 
     // -------- Logging --------
-    implementation(libs.slf4j.api)
+    // implementation(libs.log4j.api)
+    // implementation(libs.log4j.core)
 
-    // implementation(libs.slf4j.simple)
-    implementation(libs.logback.classic)
+    implementation(libs.slf4j.api)
+    implementation(libs.log4j.slf4j2.impl)
 
     // -------- Test libraries --------
     testImplementation(libs.junit.jupiter)
