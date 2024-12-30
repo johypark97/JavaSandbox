@@ -2,18 +2,26 @@
 # https://docs.gradle.org/current/userguide/platforms.html#sub::toml-dependencies-format
 
 [versions]
-guava = "33.2.1-jre"
+# -------- Gradle Plugins --------
 javafx-plugin = "0.1.0"
+
+# -------- Libraries --------
+guava = "33.2.1-jre"
+javafx-version = "21.0.4"
 junit-jupiter = "5.10.3"
 log4j = "2.23.1"
 mockito-junit-jupiter = "5.12.0"
+pmd = "7.4.0"
 slf4j-api = "2.0.16"
 
 [libraries]
+# -------- Gradle Plugins --------
+javafx-plugin = { module = "org.openjfx:javafx-plugin", version.ref = "javafx-plugin" }
+
+# -------- Libraries --------
 # log4j-api = { module = "org.apache.logging.log4j:log4j-api", version.ref = "log4j" }
 # log4j-core = { module = "org.apache.logging.log4j:log4j-core", version.ref = "log4j" }
 guava = { module = "com.google.guava:guava", version.ref = "guava" }
-javafx-plugin = { module = "org.openjfx:javafx-plugin", version.ref = "javafx-plugin" }
 junit-jupiter = { module = "org.junit.jupiter:junit-jupiter", version.ref = "junit-jupiter" }
 junit-platform-launcher = { module = "org.junit.platform:junit-platform-launcher" }
 log4j-slf4j2-impl = { module = "org.apache.logging.log4j:log4j-slf4j2-impl", version.ref = "log4j" }
