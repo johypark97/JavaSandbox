@@ -6,6 +6,8 @@ version = Version.makeVersionString()
 
 plugins {
     id("buildlogic.java-application-conventions")
+
+    alias(libs.plugins.jlink.plugin)
 }
 
 dependencies {}
@@ -33,6 +35,42 @@ application {
 // distributions.main.get().contents.into("data") {
 //     from("data")
 // }
+
+jlink {
+    val optionList = mutableListOf("--compress", "2", "--no-header-files", "--no-man-pages")
+    // optionList += "--strip-debug"
+
+    options = optionList.toList()
+
+    // slf4j - log4j2
+    addExtraDependencies("log4j-api")
+    addExtraDependencies("log4j-core")
+    addExtraDependencies("log4j-slf4j2-impl")
+    addExtraDependencies("slf4j-api")
+
+    mergedModule {
+        additive = true
+
+        // slf4j - log4j2
+        run {
+            requires("java.naming") // Fixes the JNDI lookup class warning.
+
+            requires("org.apache.logging.log4j.core")
+            requires("org.apache.logging.log4j.slf4j2.impl")
+        }
+    }
+
+    launcher {
+        // Sets the executable name of the jlink task. If not set, the project name is used.
+        name = application.applicationName
+    }
+
+    jpackage {
+        // Sets the executable and directory name of the jpackageImage task. If not set, the name
+        // set in the launcher block or the project name is used.
+        // imageName = application.applicationName
+    }
+}
 
 tasks.jar {
     manifest {

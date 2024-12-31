@@ -4,6 +4,7 @@
 [versions]
 # -------- Gradle Plugins --------
 javafx-plugin = "0.1.0"
+jlink-plugin = "3.1.1"
 
 # -------- Libraries --------
 guava = "33.4.0-jre"
@@ -27,3 +28,6 @@ junit-platform-launcher = { module = "org.junit.platform:junit-platform-launcher
 log4j-slf4j2-impl = { module = "org.apache.logging.log4j:log4j-slf4j2-impl", version.ref = "log4j" }
 mockito-junit-jupiter = { module = "org.mockito:mockito-junit-jupiter", version.ref = "mockito-junit-jupiter" }
 slf4j-api = { module = "org.slf4j:slf4j-api", version.ref = "slf4j-api" }
+
+[plugins]
+jlink-plugin = { id = "org.beryx.jlink", version.ref = "jlink-plugin" }
