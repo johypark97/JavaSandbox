@@ -37,7 +37,7 @@ application {
 // }
 
 jlink {
-    val optionList = mutableListOf("--compress", "2", "--no-header-files", "--no-man-pages")
+    val optionList = mutableListOf("--no-header-files", "--no-man-pages")
     // optionList += "--strip-debug"
 
     options = optionList.toList()
