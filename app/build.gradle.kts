@@ -1,8 +1,8 @@
 import java.time.ZonedDateTime
 import java.time.temporal.ChronoUnit
 
-// Sets project version.
-version = Version.makeVersionString()
+// Sets the project version.
+version = findProperty("version") as String
 
 plugins {
     id("buildlogic.java-application-conventions")
