@@ -8,11 +8,11 @@ jlink-plugin = "3.1.1"
 
 # -------- Libraries --------
 guava = "33.4.0-jre"
-javafx-version = "21.0.5"
+javafx-version = "21.0.6"
 junit-jupiter = "5.11.4"
 log4j = "2.24.3"
-mockito-junit-jupiter = "5.14.2"
-pmd = "7.9.0"
+mockito-junit-jupiter = "5.15.2"
+pmd = "7.10.0"
 slf4j-api = "2.0.16"
 
 [libraries]
