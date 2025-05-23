@@ -42,6 +42,20 @@ java {
 }
 
 javafx {
+    // You may need to manually download module source files to use IntelliSense.
+    // https://mvnrepository.com/artifact/org.openjfx
+
+    // Module list:
+    // - javafx.base
+    // - javafx.controls
+    // - javafx.fxml
+    // - javafx.graphics
+    // - javafx.media
+    // - javafx.swing
+    // - javafx.swt
+    // - javafx.web
+
+    modules = listOf()
     version = libs.versions.javafx.version.get()
 }
 
