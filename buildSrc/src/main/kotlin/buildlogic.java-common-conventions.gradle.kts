@@ -19,6 +19,7 @@ repositories {
 
 dependencies {
     implementation(libs.guava)
+    implementation(libs.rxjava)
 
     // -------- Logging --------
     // implementation(libs.log4j.api)
