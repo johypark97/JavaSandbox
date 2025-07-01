@@ -23,6 +23,7 @@ application {
     // directory.
     executableDir = ""
 
+    applicationDefaultJvmArgs += "-Ddebug=true"
     applicationDefaultJvmArgs += "-Dlog.level=ALL"
 
     // Includes the '$projectDir/data' directory in the archive file of the distribution task.
