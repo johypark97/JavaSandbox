@@ -1,7 +1,9 @@
 import org.gradle.accessors.dm.LibrariesForLibs
 
 val libs = the<LibrariesForLibs>()
-val mockitoAgent: Configuration = configurations.create("mockitoAgent")
+
+// https://javadoc.io/doc/org.mockito/mockito-core/latest/org.mockito/org/mockito/Mockito.html#0.3
+val mockitoAgent = configurations.create("mockitoAgent")
 
 plugins {
     java
@@ -33,7 +35,7 @@ dependencies {
     testImplementation(libs.mockito.junit.jupiter)
     testRuntimeOnly(libs.junit.platform.launcher)
 
-    @Suppress("UnstableApiUsage") mockitoAgent(libs.mockito.core) { isTransitive = false }
+    mockitoAgent(libs.mockito.core) { isTransitive = false }
 }
 
 java {
@@ -68,7 +70,7 @@ pmd {
     ruleSets = emptyList()
 }
 
-tasks.named<Test>("test") {
-    jvmArgs("-javaagent:${mockitoAgent.asPath}")
+tasks.test {
+    jvmArgs.add("-javaagent:${mockitoAgent.asPath}")
     useJUnitPlatform()
 }
