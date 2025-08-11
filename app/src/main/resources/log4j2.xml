@@ -3,7 +3,7 @@
   <Properties>
     <Property name="logDirectoryPath">log</Property>
     <Property name="logFileSize">8M</Property>
-    <Property name="logPattern">[%d] [%-5p] [%t] %c{1.} - %m%n</Property>
+    <Property name="logPattern">[%d{yyyy-MM-dd HH:mm:ss.SSS X}][%-5p][%t] %c{1.} - %m%n</Property>
     <Property name="errorLogFile_filePath">${logDirectoryPath}/error.log</Property>
     <Property name="errorLogFile_filePathPattern">${logDirectoryPath}/error-%i.log</Property>
     <Property name="infoLogFile_filePath">${logDirectoryPath}/info.log</Property>
