@@ -20,6 +20,9 @@ repositories {
 }
 
 dependencies {
+    annotationProcessor(libs.dagger.compiler)
+    implementation(libs.dagger)
+    implementation(libs.gson)
     implementation(libs.guava)
     implementation(libs.rxjava)
 

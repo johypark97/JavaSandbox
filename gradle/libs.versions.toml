@@ -7,6 +7,8 @@ javafx-plugin = "0.1.0"
 jlink-plugin = "3.2.1"
 
 # -------- Libraries --------
+dagger = "2.59.2"
+gson = "2.13.2"
 guava = "33.5.0-jre"
 javafx-version = "25.0.2"
 junit-jupiter = "6.0.3"
@@ -23,6 +25,9 @@ javafx-plugin = { module = "org.openjfx:javafx-plugin", version.ref = "javafx-pl
 # -------- Libraries --------
 # log4j-api = { module = "org.apache.logging.log4j:log4j-api", version.ref = "log4j" }
 # log4j-core = { module = "org.apache.logging.log4j:log4j-core", version.ref = "log4j" }
+dagger = { module = "com.google.dagger:dagger", version.ref = "dagger" }
+dagger-compiler = { module = "com.google.dagger:dagger-compiler", version.ref = "dagger" }
+gson = { module = "com.google.code.gson:gson", version.ref = "gson" }
 guava = { module = "com.google.guava:guava", version.ref = "guava" }
 junit-jupiter = { module = "org.junit.jupiter:junit-jupiter", version.ref = "junit-jupiter" }
 junit-platform-launcher = { module = "org.junit.platform:junit-platform-launcher" }
