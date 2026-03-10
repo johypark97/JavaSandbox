@@ -70,7 +70,7 @@ pmd {
     ruleSets = emptyList()
 }
 
-tasks.test {
+tasks.named<Test>("test") {
     jvmArgs.add("-javaagent:${mockitoAgent.asPath}")
     useJUnitPlatform()
 }
