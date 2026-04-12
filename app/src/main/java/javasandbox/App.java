@@ -20,9 +20,6 @@ public class App {
         String javaRuntimeVersion = Runtime.version().toString();
         System.out.printf("java.runtime.version = %s%n", javaRuntimeVersion);
 
-        String javafxRuntimeVersion = System.getProperty("javafx.runtime.version");
-        System.out.printf("javafx.runtime.version = %s%n", javafxRuntimeVersion);
-
         // String fileEncoding = System.getProperty("file.encoding");
         String fileEncoding = Charset.defaultCharset().displayName();
         System.out.printf("file.encoding = %s%n", fileEncoding);

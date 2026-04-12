@@ -8,11 +8,7 @@ val mockitoAgent = configurations.create("mockitoAgent")
 plugins {
     java
 
-    // JavaFX
-    id("org.openjfx.javafxplugin")
-
-    // Static analysis tools
-    pmd
+    pmd // Static code analyzer
 }
 
 repositories {
@@ -45,24 +41,6 @@ java {
     toolchain {
         languageVersion = JavaLanguageVersion.of(25)
     }
-}
-
-javafx {
-    // You may need to manually download module source files to use IntelliSense.
-    // https://mvnrepository.com/artifact/org.openjfx
-
-    // Module list:
-    // - javafx.base
-    // - javafx.controls
-    // - javafx.fxml
-    // - javafx.graphics
-    // - javafx.media
-    // - javafx.swing
-    // - javafx.swt
-    // - javafx.web
-
-    modules = listOf()
-    version = libs.versions.javafx.version.get()
 }
 
 pmd {

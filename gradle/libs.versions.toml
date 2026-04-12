@@ -3,14 +3,12 @@
 
 [versions]
 # -------- Gradle Plugins --------
-javafx-plugin = "0.1.0"
 jlink-plugin = "4.0.0"
 
 # -------- Libraries --------
 dagger = "2.59.2"
 gson = "2.13.2"
 guava = "33.5.0-jre"
-javafx-version = "25.0.2"
 junit-jupiter = "6.0.3"
 log4j = "2.25.4"
 mockito = "5.23.0"
@@ -18,11 +16,10 @@ pmd = "7.23.0"
 rxjava = "3.1.12"
 slf4j-api = "2.0.17"
 
-[libraries]
-# -------- Gradle Plugins --------
-javafx-plugin = { module = "org.openjfx:javafx-plugin", version.ref = "javafx-plugin" }
+[plugins]
+jlink-plugin = { id = "org.beryx.jlink", version.ref = "jlink-plugin" }
 
-# -------- Libraries --------
+[libraries]
 # log4j-api = { module = "org.apache.logging.log4j:log4j-api", version.ref = "log4j" }
 # log4j-core = { module = "org.apache.logging.log4j:log4j-core", version.ref = "log4j" }
 dagger = { module = "com.google.dagger:dagger", version.ref = "dagger" }
@@ -36,6 +33,3 @@ mockito-core = { module = "org.mockito:mockito-core", version.ref = "mockito" }
 mockito-junit-jupiter = { module = "org.mockito:mockito-junit-jupiter", version.ref = "mockito" }
 rxjava = { module = "io.reactivex.rxjava3:rxjava", version.ref = "rxjava" }
 slf4j-api = { module = "org.slf4j:slf4j-api", version.ref = "slf4j-api" }
-
-[plugins]
-jlink-plugin = { id = "org.beryx.jlink", version.ref = "jlink-plugin" }
